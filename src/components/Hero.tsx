@@ -13,7 +13,7 @@ const HeroContent = () => (
             Mon objectif est de vous rendre inoubliable !
         </div>
         <div className="my-8">
-            <a href="/" className="glassbtn px-8 py-4 my-4 rounded-full shadow-lg">
+            <a href="#contact" className="glassbtn px-8 py-4 my-4 rounded-full shadow-lg">
                 Contactez-moi
             </a>
         </div>
