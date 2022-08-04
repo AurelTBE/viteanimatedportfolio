@@ -47,7 +47,6 @@ code {
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
-  border-radius: 1.05rem;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   transition: box-shadow .15s,transform .15s;
   user-select: none;

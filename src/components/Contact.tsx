@@ -59,7 +59,6 @@ const Contact = () => {
     }
 
     const topics = [
-        {value: "", label: "Merci de choisir un motif de contact"},
         {value: "Offre d'emploi", label: "Offre d'emploi"},
         {value: "Collaboration", label: "Collaboration"},
         {value: "Question", label: "Question"},
@@ -67,22 +66,21 @@ const Contact = () => {
         {value: "Autre", label: "Autre"},
     ]
 
-    const Dropdown = ({options, value, onChange}:any) => {
-        return (
-            <select
-                className={`${!value ? "text-gray-400" : "text-gray-900"} bg-gray-50 border border-gray-300 font-medium rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 pr-2`}
-                value={value}
-                onChange={e => onChange(e.target.value)}
-            >
-                {options.map((option:any) => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
-            </select>
-        )
-    }
-
+    const Dropdown = ({ options, value, onChange }:any) => (
+        <select
+            className={`w-full px-3 py-2 font-medium ${value === "" ? "text-gray-500": "text-gray-900"} border rounded-lg appearance-none focus:shadow-outline`}
+            value={value}
+            onChange={e => onChange(e.target.value)}
+            placeholder="Merci de choisir un motif de contact"
+        >
+            <option value="" selected disabled hidden>Merci de choisir un motif de contact</option>
+            {options.map((option:any) => (
+                <option key={option.value} value={option.value} className="text-gray-900">
+                    {option.label}
+                </option>
+            ))}
+        </select>
+    )
     return (
         <section id="contact" className="relative z-0 mx-10 antialiased lg:mx-20">
             <hr />
@@ -150,7 +148,7 @@ const Contact = () => {
                                 </div>
                             }
                             <div>
-                                <button type="submit" className={`text-white ${isSubmitted && "bg-green-500"} ${(!isError && !isSubmitted) && "bg-blue-700"} hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center`} disabled={isSending || isSubmitted}>
+                                <button type="submit" className={`text-white ${isSubmitted && "bg-green-500"} ${!isSubmitted && "glassbtn"} shadow-lg focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center`} disabled={isSending || isSubmitted}>
                                     {isSending ? 
                                         <>
                                             <svg aria-hidden="true" role="status" className="inline mr-3 w-4 h-4 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

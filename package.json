@@ -1,6 +1,6 @@
 {
   "name": "viteportfolio",
-  "version": "0.0.0",
+  "version": "0.2.1",
   "scripts": {
     "dev": "vite",
     "build": "set NODE_OPTIONS=--max-old-space-size=16192 && tsc && vite build",
