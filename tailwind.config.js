@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./components/**/*.tsx', './public/**/*.html', './src/**/*.tsx'],
+  content: ['./components/**/*.tsx', './public/**/*.html', './src/**/*.tsx', 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'],
   theme: {
     screens: {
       'xs': '480px',
@@ -17,4 +17,7 @@ module.exports = {
       }
     },
   },
+  plugins: [
+    require('flowbite/plugin')
+  ]
 }
